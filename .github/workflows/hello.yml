@@ -16,5 +16,14 @@ jobs:
           date
       - name: Say goodbye
         run: echo "Goodbye World!"
+  ab_job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Welcome abdu
+        run: |
+          echo "Hello abdu!"
+          ls -a
+          date
+       
          
             
