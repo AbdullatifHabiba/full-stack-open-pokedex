@@ -14,3 +14,7 @@ jobs:
           echo "Hello World!"
           ls
           date
+      - name: Say goodbye
+        run: echo "Goodbye World!"
+         
+            
