@@ -1,0 +1,32 @@
+name:  Pipeline
+on:
+  push:
+    branches:
+      - main
+jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout repository
+         uses: actions/checkout@v2
+       - name : setup node
+         uses: actions/setup-node@v2
+         with:
+           node-version: '20'  
+       - name: Install dependencies
+         run: |
+           npm install
+       - name: Build
+         run: |
+           npm run eslint
+       - name: Test
+         run: |
+           npm test
+       - name: Deploy
+         run: |
+           echo "Deploying!"
+           ls
+           date     
+
+    
+   
