@@ -132,3 +132,19 @@ describe('<PokemonPage />', () => {
     expect(screen.queryByText('Next')).toBeNull()
   })  
 })
+const { test, describe, expect, beforeEach } = require('@playwright/test')
+
+describe('Pokedex', () => {
+  test('front page can be opened', async ({ page }) => {
+     await page.goto('')
+    await expect(page.getByText('ivysaur')).toBeVisible()
+    await expect(page.getByText('Pokémon and Pokémon character names are trademarks of Nintendo.')).toBeVisible()
+  })
+})
+describe('Pokedexs', function() {
+  it('front page can be opened', function() {
+    cy.visit('http://localhost:5000')
+    cy.contains('ivysaur')
+    cy.contains('Pokémon and Pokémon character names are trademarks of Nintendo.')
+  })
+})
